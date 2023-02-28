@@ -8,7 +8,7 @@ def home(request):
     return HttpResponse("HOME")
 
 def index(request):
-    return HttpResponse("Hello World")
+    return HttpResponse("Hello World......!")
 
 def aboutUs(request):
     return render(request, 'aboutus.html')
