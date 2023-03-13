@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'product',
     'student',
     'studentNew',
-    'cbv'
+    'cbv',
+    'user',
 ]
 
 MIDDLEWARE = [
@@ -76,6 +77,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'pgfinder.wsgi.application'
 
+AUTH_USER_MODEL = 'user.User'
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
