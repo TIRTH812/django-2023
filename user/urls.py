@@ -10,5 +10,5 @@ urlpatterns = [
     path('developererregister/',DeveloperRegisterView.as_view(),name='developererregister'),
     path('login/',UserLoginView.as_view(),name='login'),
     path('logout/',LogoutView.as_view(),name='logout'),
-    path('sendmail/',views.sendMail,name='sendmail'),
+    # path('sendmail/',views.sendMail,name='sendmail'),
 ]

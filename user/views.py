@@ -21,16 +21,16 @@ class ManagerRegisterView(CreateView):
     #     return super().get_context_data(**kwargs)
 
     def form_valid(self,form):
-        email = form.cleaned_data.get('email')
-        mail_response = sendMail(email)
+        # email = form.cleaned_data.get('email')
+        # mail_response = sendMail(email)
         # print(mail_response)
-        if mail_response > 0:
+        # if mail_response > 0:
             user = form.save()
             login(self.request,user)
             return super().form_valid(form)
             # return HttpResponse('Mail Sent')
-        else:
-            print('Failed to send mail')
+        # else:
+            # print('Failed to send mail')
             # return HttpResponse('Failed to send mail')
     
 class DeveloperRegisterView(CreateView):
@@ -44,16 +44,16 @@ class DeveloperRegisterView(CreateView):
     #     return super().get_context_data(**kwargs)
 
     def form_valid(self,form):
-        email = form.cleaned_data.get('email')
-        mail_response = sendMail(email)
+        # email = form.cleaned_data.get('email')
+        # mail_response = sendMail(email)
         # print(mail_response)
-        if mail_response > 0:
+        # if mail_response > 0:
             user = form.save()
             login(self.request,user)
             return super().form_valid(form)
             # return HttpResponse('Mail Sent')
-        else:
-            print('Failed to send mail')
+        # else:
+            # print('Failed to send mail')
             # return HttpResponse('Failed to send mail')
 
 class UserLoginView(LoginView):
@@ -70,6 +70,17 @@ class UserLoginView(LoginView):
                 return '/no_role/'
             
 
+# def sendMail(email):
+#     subject = 'Welcome to the PG Finder'
+#     message = 'We are glad to welcome you. Our Website helps you to find out best PG according to your requirements'
+#     email_from = settings.EMAIL_HOST_USER
+#     recipient_list = [email]
+#     mail_response = send_mail(subject,message,email_from,recipient_list)
+#     return mail_response
+
+
+# Logic to implement Email functionality
+
 # def sendMail(request):
 #     subject = "welcome to django"
 #     message = "hello django"
@@ -82,11 +93,3 @@ class UserLoginView(LoginView):
 #         print("mail not sent")    
 #     print(res)
 #     return HttpResponse("mail sent")
-
-def sendMail(email):
-    subject = 'Welcome to the PG Finder'
-    message = 'We are glad to welcome you. Our Website helps you to find out best PG according to your requirements'
-    email_from = settings.EMAIL_HOST_USER
-    recipient_list = [email]
-    mail_response = send_mail(subject,message,email_from,recipient_list)
-    return mail_response
